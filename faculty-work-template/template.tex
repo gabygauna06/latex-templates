@@ -1,0 +1,249 @@
+% =============================================================
+% TEMPLATE
+% =============================================================
+
+
+% -------- LANGUAGE / ENCODING ----------
+\ifES
+  \usepackage[spanish, es-nodecimaldot]{babel}
+\else
+  \usepackage[english]{babel}
+\fi
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+
+
+% -------- TYPOGRAPHY ----------
+\usepackage{lmodern}
+
+
+% -------- MATH ----------
+\usepackage{amsmath, amssymb, amsfonts}
+
+
+% -------- LISTS ----------
+\usepackage{enumitem}
+\usepackage{textcomp}
+\setlist[itemize]{label=\textbullet, leftmargin=*, topsep=2pt, itemsep=1pt, parsep=0pt, partopsep=0pt}
+\setlist[enumerate]{leftmargin=*, topsep=2pt, itemsep=2pt, parsep=0pt, partopsep=0pt}
+
+
+% -------- TABLES ----------
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+
+
+% -------- GRAPHICS ----------
+\usepackage{graphicx}
+\graphicspath{{assets/}{assets/figures/}}
+
+
+% -------- LINKS ----------
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+
+
+% -------- MARGINS ----------
+\usepackage{geometry}
+\geometry{
+  top=2.1cm,
+  bottom=2.3cm,
+  left=2.5cm,
+  right=2.5cm,
+  headheight=28pt,
+  headsep=30pt,
+  footskip=30pt,
+  includeheadfoot
+}
+
+
+% -------- HEADER / FOOTER ----------
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+% -------- CODE ----------
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\small,
+  columns=fullflexible,
+  frame=single,
+  breaklines=true,
+  showstringspaces=false
+}
+
+
+% -------- DIAGRAMS ----------
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{circuits.logic.US, positioning, arrows.meta}
+\definecolor{CoverAccent}{HTML}{1E2E4A} % cover only
+
+
+% -------- PLOTS ----------
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+
+% =============================================================
+% METADATA (EDIT IN metadata.tex)
+% =============================================================
+
+\newcommand{\university}{}
+\newcommand{\school}{}
+\newcommand{\career}{}
+
+\newcommand{\subject}{}
+\newcommand{\doctype}{}
+\newcommand{\docid}{}
+
+\newcommand{\titlee}{}
+\newcommand{\subtitle}{}
+
+\newcommand{\authors}{}
+\newcommand{\authorsHeader}{}
+
+\newcommand{\teacher}{}
+\newcommand{\placedate}{}
+
+\newcommand{\coverlogo}{faculty-logo.png}
+
+
+% =============================================================
+% HEADER / FOOTER CONTENT (B/W)
+% =============================================================
+
+\fancyhead[L]{\small \titlee}
+\fancyhead[R]{\small \subject}
+
+\fancyfoot[L]{\small \university}
+\fancyfoot[R]{\small \thepage\ /\ \pageref{LastPage}}
+
+
+% =============================================================
+% COVER PAGE (COLOR ONLY)
+% =============================================================
+
+\newcommand{\makecover}{%
+  \begin{titlepage}
+    \thispagestyle{empty}
+
+    \begin{tikzpicture}[remember picture,overlay]
+      \fill[CoverAccent] (current page.north west) rectangle ([xshift=4.0mm]current page.south west);
+    \end{tikzpicture}
+
+    \vspace*{10mm}
+
+    \begin{center}
+      \IfFileExists{assets/\coverlogo}{%
+        \includegraphics[width=0.78\textwidth]{\coverlogo}
+      }{}
+    \end{center}
+
+    \vspace{12mm}
+
+    \begin{center}
+      {\bfseries\Large \university\par}
+      \vspace{2mm}
+      {\bfseries\normalsize \school\par}
+      \vspace{1mm}
+      {\normalsize \career\par}
+    \end{center}
+
+    \vspace{14mm}
+
+    \noindent
+    {\bfseries \subject}\par
+    \vspace{2mm}
+    {\bfseries \doctype\ \docid}\par
+
+    \vspace{10mm}
+
+    \noindent
+    {\bfseries\fontsize{26}{32}\selectfont \titlee\par}
+
+    \vspace{4mm}
+    \noindent
+    {\normalsize \subtitle\par}
+
+    \vspace{8mm}
+    \noindent{\color{CoverAccent}\rule{\textwidth}{1.0pt}}
+
+  \end{titlepage}%
+}
+
+
+% =============================================================
+% TEAM / SUBMISSION PAGE (B/W)
+% =============================================================
+
+\newcommand{\maketeampage}{%
+  \thispagestyle{empty}
+
+  \vspace*{8mm}
+
+  \noindent
+  {\bfseries\Large \titlee\par}
+
+  \vspace{2mm}
+  {\normalsize \subject\ \textbullet\ \doctype\ \docid\par}
+
+  \vspace{10mm}
+  \noindent\rule{\textwidth}{0.6pt}
+
+  \vspace{10mm}
+
+  \noindent
+  \begin{tabularx}{\textwidth}{@{}lX@{}}
+    {\bfseries \ifES Autores:\else Authors:\fi} & \authors \\
+    {\bfseries \ifES Profesor/a:\else Instructor:\fi} & \teacher \\
+    {\bfseries \ifES Fecha:\else Date:\fi} & \placedate \\
+  \end{tabularx}
+
+  \vfill
+
+  \noindent\rule{\textwidth}{0.6pt}
+
+  \newpage
+}
+
+
+% =============================================================
+% DOCUMENT
+% =============================================================
+
+\begin{document}
+
+\input{metadata.tex}
+
+\hypersetup{pageanchor=false}
+
+\makecover
+\maketeampage
+
+\hypersetup{pageanchor=true}
+\setcounter{page}{1}
+\pagestyle{fancy}
+
+% \tableofcontents
+% \newpage
+
+\ifES
+  \input{lang/es/body.tex}
+\else
+  \input{lang/en/body.tex}
+\fi
+
+\newpage
+\input{references.tex}
+
+\end{document}
