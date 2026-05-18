@@ -3,15 +3,26 @@
 Minimal, print-friendly LaTeX template for faculty assignments with bilingual bodies (ES/EN).
 
 ## Build
-Compile `main-es.tex` or `main-en.tex` (pdfLaTeX).
+- Spanish: compile `main-es.tex`
+- English: compile `main-en.tex`
 
-## Layout
-- Color is used only on the cover.
-- Headers/footers are black & white for printing.
+Recommended output directory:
+- `out/latex/`
+
+## Design
+- Cover: minimal accent color (print-friendly).
+- Body pages: black & white.
+- Header: left = document title, right = course name.
+- Submission page: authors + instructor + date on page 2.
 
 ## Structure
-- `template.tex` global layout (no \documentclass)
-- `metadata.tex` document metadata
-- `lang/` bilingual bodies
-- `assets/` logo and figures
-- `references.tex` manual references at the end
+- `main-es.tex`, `main-en.tex` — entrypoints
+- `src/` — core sources
+- `lang/` — bilingual bodies
+- `assets/` — logo and figures
+
+## Edit
+- Assignment metadata: `src/metadata.tex`
+- Content: `lang/<es|en>/body.tex`
+- References at the end: `src/references.tex`
+- Cover logo: `assets/faculty-logo.png`

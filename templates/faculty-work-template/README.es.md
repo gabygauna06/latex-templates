@@ -1,17 +1,28 @@
-# Plantilla De Trabajos De Facultad
+# Plantilla De Trabajo De Facultad
 
-Plantilla LaTeX mínima y apta para impresión para trabajos con body bilingüe (ES/EN).
+Plantilla LaTeX mínima y apta para impresión para trabajos con bodies bilingües (ES/EN).
 
 ## Compilación
-Compilar `main-es.tex` o `main-en.tex` (pdfLaTeX).
+- Español: compilar `main-es.tex`
+- Inglés: compilar `main-en.tex`
+
+Directorio de salida recomendado:
+- `out/latex/`
 
 ## Diseño
-- Color solo en la portada.
-- Encabezados/pies en blanco y negro para imprimir.
+- Portada: acento de color mínimo (apta para imprimir).
+- Cuerpo: blanco y negro.
+- Encabezado: izquierda = título, derecha = materia.
+- Hoja de entrega: autores + docente + fecha en página 2.
 
 ## Estructura
-- `template.tex` maquetación global (sin \documentclass)
-- `metadata.tex` metadatos del documento
-- `lang/` bodies bilingües
-- `assets/` logo e imágenes
-- `references.tex` referencias manuales al final
+- `main-es.tex`, `main-en.tex` — entrypoints
+- `src/` — fuentes principales
+- `lang/` — bodies bilingües
+- `assets/` — logo y figuras
+
+## Qué Se Edita
+- Metadatos: `src/metadata.tex`
+- Contenido: `lang/<es|en>/body.tex`
+- Referencias al final: `src/references.tex`
+- Logo de portada: `assets/faculty-logo.png`
