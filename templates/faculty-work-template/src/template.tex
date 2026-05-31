@@ -203,11 +203,18 @@
   \vspace{10mm}
 
   \noindent
-  \begin{tabularx}{\textwidth}{@{}lX@{}}
-    {\bfseries \ifES Autores:\else Authors:\fi} & \authors \\
-    {\bfseries \ifES Profesor/a:\else Instructor:\fi} & \teacher \\
-    {\bfseries \ifES Fecha:\else Date:\fi} & \placedate \\
-  \end{tabularx}
+  {\setlength{\tabcolsep}{0pt}%
+  \renewcommand{\arraystretch}{1.55}%
+  \begin{tabularx}{\textwidth}{@{}p{4.0cm}X@{}}
+  {\bfseries \ifES Autores:\else Authors:\fi} &
+  \parbox[t]{\linewidth}{\authors\vspace{0.55cm}} \\
+
+  {\bfseries \ifES Profesor/a:\else Instructor:\fi} &
+  \parbox[t]{\linewidth}{\teacher} \\[0.75cm]
+
+  {\bfseries \ifES Fecha:\else Date:\fi} &
+  \parbox[t]{\linewidth}{\placedate}
+  \end{tabularx}}
 
   \vfill
 
