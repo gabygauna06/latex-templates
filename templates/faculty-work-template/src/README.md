@@ -7,3 +7,7 @@ This directory stores the structural source files of the template.
 - `metadata.tex`
 - `references.tex`
 - `template.tex`
+
+## Notes
+
+The main entry files should reference the structural files from this directory.

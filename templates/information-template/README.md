@@ -1,29 +1,21 @@
 # Information Template
 
-Minimal, print-friendly LaTeX template with bilingual bodies (ES/EN).
-
-## Build
-- Spanish: compile `main-es.tex`
-- English: compile `main-en.tex`
-
-Recommended output directory:
-- `out/latex/`
-
-## Design
-- Cover: minimal accent color (print-friendly).
-- Body pages: black & white.
-- Header: left = document title, right = category/course (as configured in the template).
+Professional bilingual LaTeX template for general-purpose academic and technical documents.
 
 ## Structure
-- `main-es.tex`, `main-en.tex` — entrypoints
-- `template.tex` — global layout and styling
-- `lang/` — bilingual bodies
-- `assets/` — figures/diagrams/tables used by the document
-- `references.tex` — manual references at the end (thebibliography)
-- `out/` — optional final PDFs you choose to keep
 
-## Edit
-- Metadata: edit the METADATA block (as defined in the template).
-- Content: `lang/<es|en>/`
-- References at the end: `references.tex`
-- Assets: `assets/`
+- `assets/`
+- `lang/`
+- `src/`
+- `out/`
+- `main-es.tex`
+- `main-en.tex`
+
+## Build Output
+
+Compiled files must be written to `out/latex/` and remain ignored by Git.
+
+## Notes
+
+This template follows the shared structure used across the template collection.
+It is intended for general documents that do not require the faculty-work cover layout.

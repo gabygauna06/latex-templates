@@ -1,3 +1,11 @@
-# Body En Inglés
+# Inglés
 
-Aquí se ubica el contenido fuente en inglés.
+Esta carpeta almacena el cuerpo del documento en inglés.
+
+## Contenido
+
+- `body.tex`
+
+## Notas
+
+Esta carpeta debe utilizarse para la versión en inglés del cuerpo del documento.
