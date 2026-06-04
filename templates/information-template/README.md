@@ -20,7 +20,7 @@ Recommended output directory:
 - `lang/` — bilingual bodies
 - `assets/` — figures/diagrams/tables used by the document
 - `references.tex` — manual references at the end (thebibliography)
-- `output/` — optional final PDFs you choose to keep
+- `out/` — optional final PDFs you choose to keep
 
 ## Edit
 - Metadata: edit the METADATA block (as defined in the template).

@@ -20,7 +20,7 @@ Directorio de salida recomendado:
 - `lang/` — bodies bilingües
 - `assets/` — figuras/diagramas/tablas del documento
 - `references.tex` — referencias manuales al final (thebibliography)
-- `output/` — PDFs finales opcionales que se quieran guardar
+- `out/` — PDFs finales opcionales que se quieran guardar
 
 ## Qué Se Edita
 - Metadatos: editar el bloque METADATA (según esté definido en el template).
