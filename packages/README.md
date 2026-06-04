@@ -1,5 +1,13 @@
 # Packages
 
-Downloadable ZIP builds of each template folder.
+This directory stores versioned ZIP distributions of the available templates.
 
-These archives are generated from tracked files only (no build output).
+## Current Packages
+
+- `faculty-work-template-v0.2.0.zip`
+- `information-template-v0.1.0.zip`
+
+## Notes
+
+Each ZIP package contains the corresponding template ready to be copied or reused.
+Local LaTeX build output under `out/latex/` is excluded from distribution packages.
