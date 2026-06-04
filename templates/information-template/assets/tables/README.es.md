@@ -1,3 +1,3 @@
 # Tablas
 
-Fuentes de tablas (opcional) o imágenes exportadas de tablas.
+Esta carpeta almacena recursos vinculados a tablas utilizados por la plantilla.

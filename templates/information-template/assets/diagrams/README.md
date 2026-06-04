@@ -1,3 +1,3 @@
 # Diagrams
 
-Exported technical diagrams (usually image files).
+This directory stores diagram assets used by the template.

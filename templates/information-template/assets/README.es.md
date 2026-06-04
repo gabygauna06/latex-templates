@@ -1,8 +1,9 @@
 # Assets
 
-Recursos usados por el documento.
+Esta carpeta almacena recursos estáticos utilizados por la plantilla.
 
-Subcarpetas recomendadas:
-- `figures/` — imágenes insertadas en el contenido
-- `diagrams/` — diagramas exportados
-- `tables/` — fuentes de tablas o imágenes exportadas de tablas (opcional)
+## Estructura
+
+- `diagrams/`: diagramas
+- `figures/`: figuras
+- `tables/`: recursos vinculados a tablas

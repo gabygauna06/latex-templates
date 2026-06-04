@@ -1,3 +1,3 @@
 # Diagrams
 
-This directory stores diagram assets for the template.
+This directory stores diagram assets used by the template.

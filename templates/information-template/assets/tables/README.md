@@ -1,3 +1,3 @@
 # Tables
 
-Table sources (optional) or exported table images.
+This directory stores table-related assets used by the template.

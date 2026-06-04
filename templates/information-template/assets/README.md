@@ -1,8 +1,9 @@
 # Assets
 
-Assets used by the document.
+This directory stores static assets used by the template.
 
-Recommended subfolders:
-- `figures/` — images embedded in the content
-- `diagrams/` — exported diagrams
-- `tables/` — table sources or exported table images (optional)
+## Structure
+
+- `diagrams/`: diagram assets
+- `figures/`: figure assets
+- `tables/`: table-related assets

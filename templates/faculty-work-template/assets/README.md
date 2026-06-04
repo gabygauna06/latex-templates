@@ -1,4 +1,9 @@
 # Assets
 
-Document assets (logo + figures).
-Place your faculty logo at: `assets/faculty-logo.png`.
+This directory stores static assets used by the template.
+
+## Structure
+
+- `diagrams/`: diagram assets
+- `figures/`: figure assets
+- `tables/`: table-related assets

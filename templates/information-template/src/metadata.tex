@@ -1,0 +1,29 @@
+% =============================================================
+% METADATA
+% =============================================================
+
+\renewcommand{\university}{[University]}
+\renewcommand{\school}{[School]}
+\renewcommand{\career}{[Program]}
+
+\ifES
+  \renewcommand{\subject}{[Materia]}
+  \renewcommand{\doctype}{[Tipo de Documento]}
+  \renewcommand{\docid}{[Identificador]}
+  \renewcommand{\titlee}{[Título]}
+  \renewcommand{\subtitle}{[Subtítulo]}
+  \renewcommand{\teacher}{[Profesor/a]}
+  \renewcommand{\placedate}{\today}
+\else
+  \renewcommand{\subject}{[Course]}
+  \renewcommand{\doctype}{[Document Type]}
+  \renewcommand{\docid}{[Identifier]}
+  \renewcommand{\titlee}{[Title]}
+  \renewcommand{\subtitle}{[Subtitle]}
+  \renewcommand{\teacher}{[Instructor]}
+  \renewcommand{\placedate}{\today}
+\fi
+
+\renewcommand{\authors}{[Author 1]\\[0.10cm][Author 2]}
+\renewcommand{\authorsHeader}{[Author 1] \textbullet\ [Author 2]}
+\renewcommand{\coverlogo}{faculty-logo.png}

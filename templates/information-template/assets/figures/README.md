@@ -1,3 +1,3 @@
 # Figures
 
-Images embedded in the document content.
+This directory stores figure assets used by the template.

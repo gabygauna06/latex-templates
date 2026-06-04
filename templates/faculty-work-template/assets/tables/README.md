@@ -1,3 +1,3 @@
 # Tables
 
-This directory stores table-related assets for the template.
+This directory stores table-related assets used by the template.

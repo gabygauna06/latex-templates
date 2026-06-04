@@ -1,3 +1,3 @@
 # Figures
 
-Per-document figures (diagrams, screenshots, plots).
+This directory stores figure assets used by the template.

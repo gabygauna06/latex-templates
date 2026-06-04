@@ -1,3 +1,3 @@
 # Figuras
 
-Figuras del documento (diagramas, capturas, gráficos).
+Esta carpeta almacena figuras utilizadas por la plantilla.

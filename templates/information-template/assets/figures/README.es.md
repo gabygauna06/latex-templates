@@ -1,3 +1,3 @@
 # Figuras
 
-Imágenes insertadas en el contenido del documento.
+Esta carpeta almacena figuras utilizadas por la plantilla.
