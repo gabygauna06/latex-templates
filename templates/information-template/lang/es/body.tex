@@ -1,13 +1,112 @@
-\section{Título de sección}
-Texto de ejemplo.
+% =============================================================
+% BODY (ES) – GENERAL TEMPLATE CONTENT
+% =============================================================
+
+\section{Overview}
+\vspace{2mm}
+
+Este documento utiliza una plantilla bilingüe (ES/EN) orientada a documentación técnica y personal. El objetivo es mantener una estructura modular, consistente y fácil de mantener en el tiempo.
+
+\vspace{2mm}
+
+
+\subsection{Qué Se Edita}
+\vspace{2mm}
+
+\begin{itemize}
+  \item \textbf{Metadatos:} editar el bloque \texttt{METADATA} (título, categoría, versión, estado, fecha, autor).
+  \item \textbf{Contenido:} escribir en \texttt{lang/es/body.tex}.
+  \item \textbf{Referencias:} completar \texttt{src/references.tex} (bibliografía manual al final).
+  \item \textbf{Assets:} guardar recursos en \texttt{assets/figures/}, \texttt{assets/diagrams/} y \texttt{assets/tables/}.
+\end{itemize}
+
+\vspace{2mm}
+
+
+\section{Contenido Principal}
+\vspace{2mm}
+
+Se recomienda mantener párrafos breves, y separar por subsecciones cuando el tema crezca (una idea principal por subsección).
+
+\vspace{2mm}
+
+
+\subsection{Notas, Tips Y Advertencias}
+\vspace{2mm}
 
 \begin{noteBox}
 \boxlabel{Nota}
-Bloque de observación personal.
+Bloque para decisiones, contexto relevante o aclaraciones.
 \end{noteBox}
 
-\subsection{Subsección}
+\vspace{2mm}
+
+\begin{tipBox}
+\boxlabel{Tip}
+Bloque para recomendaciones prácticas, buenas prácticas o shortcuts seguros.
+\end{tipBox}
+
+\vspace{2mm}
+
+\begin{warnBox}
+\boxlabel{Advertencia}
+Bloque para riesgos, restricciones o pasos propensos a errores.
+\end{warnBox}
+
+\vspace{2mm}
+
+
+\subsection{Checklist}
+\vspace{2mm}
+
 \begin{itemize}
-  \item Ítem 1.
-  \item Ítem 2.
+  \item Punto a verificar.
+  \item Supuesto o decisión tomada.
+  \item Resultado esperado.
+  \item Próximo paso.
 \end{itemize}
+
+\vspace{2mm}
+
+
+\section{Ejemplos}
+\vspace{2mm}
+
+\subsection{Código}
+\vspace{2mm}
+
+\begin{lstlisting}
+# Example
+print("Hello, world!")
+\end{lstlisting}
+
+\vspace{2mm}
+
+
+\subsection{Figura (Snippet)}
+\vspace{2mm}
+
+\begin{lstlisting}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.80\linewidth]{assets/figures/your-figure.png}
+  \caption{Descripcion breve de la figura.}
+\end{figure}
+\end{lstlisting}
+
+\vspace{2mm}
+
+
+\subsection{Diagrama / Compuertas (TikZ)}
+\vspace{2mm}
+
+\begin{center}
+\begin{tikzpicture}[circuit logic US, scale=1.0, transform shape]
+  \node[and gate, draw, logic gate inputs=nn] (G) at (0,0) {};
+  \draw (-1.2,0.2) -- (G.input 1);
+  \draw (-1.2,-0.2) -- (G.input 2);
+  \draw (G.output) -- (1.2,0);
+\end{tikzpicture}
+\end{center}
+
+\vspace{2mm}

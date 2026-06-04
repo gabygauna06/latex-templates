@@ -1,13 +1,112 @@
-\section{Section Title}
-Example text.
+% =============================================================
+% BODY (EN) – GENERAL TEMPLATE CONTENT
+% =============================================================
+
+\section{Overview}
+\vspace{2mm}
+
+This document uses a bilingual (ES/EN) template for technical and personal documentation. The goal is to keep the structure modular, consistent, and easy to maintain over time.
+
+\vspace{2mm}
+
+
+\subsection{What To Edit}
+\vspace{2mm}
+
+\begin{itemize}
+  \item \textbf{Metadata:} edit the \texttt{METADATA} block (title, category, version, status, date, author).
+  \item \textbf{Content:} write in \texttt{lang/en/body.tex}.
+  \item \textbf{References:} update \texttt{src/references.tex} (manual bibliography at the end).
+  \item \textbf{Assets:} store resources in \texttt{assets/figures/}, \texttt{assets/diagrams/}, and \texttt{assets/tables/}.
+\end{itemize}
+
+\vspace{2mm}
+
+
+\section{Main Content}
+\vspace{2mm}
+
+Keep paragraphs short and introduce subsections as the topic grows (one main idea per subsection).
+
+\vspace{2mm}
+
+
+\subsection{Notes, Tips, And Warnings}
+\vspace{2mm}
 
 \begin{noteBox}
 \boxlabel{Note}
-Personal observation block.
+Use this block for context, decisions, or important clarifications.
 \end{noteBox}
 
-\subsection{Subsection}
+\vspace{2mm}
+
+\begin{tipBox}
+\boxlabel{Tip}
+Use this block for practical recommendations and safe shortcuts.
+\end{tipBox}
+
+\vspace{2mm}
+
+\begin{warnBox}
+\boxlabel{Warning}
+Use this block for risks, constraints, or error-prone steps.
+\end{warnBox}
+
+\vspace{2mm}
+
+
+\subsection{Checklist}
+\vspace{2mm}
+
 \begin{itemize}
-  \item Item 1.
-  \item Item 2.
+  \item Item to verify.
+  \item Assumption or decision taken.
+  \item Expected outcome.
+  \item Next step.
 \end{itemize}
+
+\vspace{2mm}
+
+
+\section{Examples}
+\vspace{2mm}
+
+\subsection{Code}
+\vspace{2mm}
+
+\begin{lstlisting}
+# Example
+print("Hello, world!")
+\end{lstlisting}
+
+\vspace{2mm}
+
+
+\subsection{Figure (Snippet)}
+\vspace{2mm}
+
+\begin{lstlisting}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.80\linewidth]{assets/figures/your-figure.png}
+  \caption{Short figure caption.}
+\end{figure}
+\end{lstlisting}
+
+\vspace{2mm}
+
+
+\subsection{Diagrams / Logic Gates (TikZ)}
+\vspace{2mm}
+
+\begin{center}
+\begin{tikzpicture}[circuit logic US, scale=1.0, transform shape]
+  \node[and gate, draw, logic gate inputs=nn] (G) at (0,0) {};
+  \draw (-1.2,0.2) -- (G.input 1);
+  \draw (-1.2,-0.2) -- (G.input 2);
+  \draw (G.output) -- (1.2,0);
+\end{tikzpicture}
+\end{center}
+
+\vspace{2mm}
