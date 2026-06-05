@@ -1,5 +1,9 @@
-% -------- LANGUAGE / TYPOGRAPHY ----------
+% =============================================================
+% INFORMATION TEMPLATE
+% =============================================================
 
+
+% -------- LANGUAGE / ENCODING ----------
 \ifES
   \usepackage[spanish, es-nodecimaldot]{babel}
 \else
@@ -9,6 +13,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{microtype}
+
+
+% -------- TYPOGRAPHY ----------
 \usepackage[sfdefault]{FiraSans}
 \usepackage[varqu]{zi4}
 \renewcommand{\familydefault}{\sfdefault}
@@ -22,24 +29,22 @@
 \usepackage{amsmath, amssymb, amsfonts}
 
 
-% -------- LISTS / FLOATS ----------
+% -------- LISTS ----------
 \usepackage{enumitem}
+\usepackage{textcomp}
 \setlist[itemize]{label=\textbullet, topsep=2pt, itemsep=1pt, parsep=0pt, partopsep=0pt}
-
-\usepackage{float}
 
 
 % -------- COLOUR / DRAW ----------
 \usepackage{xcolor}
 \usepackage{tikz}
-\usetikzlibrary{circuits.logic.US}
+\usetikzlibrary{circuits.logic.US, positioning, arrows.meta}
 
 
 % -------- TABLES ----------
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{array}
-
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
@@ -49,8 +54,15 @@
 \usepackage[most]{tcolorbox}
 
 
-% -------- LISTINGS (CODE) ----------
+% -------- LISTINGS ----------
 \usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\small,
+  columns=fullflexible,
+  frame=single,
+  breaklines=true,
+  showstringspaces=false
+}
 
 
 % -------- MARGINS ----------
@@ -60,16 +72,17 @@
   bottom=2.3cm,
   left=2.4cm,
   right=2.4cm,
-  headheight=36pt,
-  headsep=28pt,
-  footskip=28pt,
+  headheight=16pt,
+  headsep=40pt,
+  footskip=18pt,
   includeheadfoot
 }
 
 
+
 % -------- GRAPHICS ----------
 \usepackage{graphicx}
-\graphicspath{{assets/}{Images/}}
+\graphicspath{{assets/}{assets/figures/}{assets/diagrams/}{assets/tables/}}
 
 
 % -------- LINKS ----------
@@ -80,6 +93,8 @@
 % -------- HEADER / FOOTER ----------
 \usepackage{fancyhdr}
 \usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhf{}
 
 
 % -------- TITLES ----------
@@ -96,67 +111,57 @@
 
 
 % =============================================================
-% METADATA
+% LABELS (LANG)
 % =============================================================
 
 \ifES
-  \newcommand{\libraryDefault}{Biblioteca Personal}
-  \newcommand{\taglineDefault}{Documentación y Notas de Referencia}
-  \newcommand{\categoryDefault}{Categoría}
-  \newcommand{\doctypeDefault}{Nota}
-  \newcommand{\titleDefault}{Título}
-  \newcommand{\subtitleDefault}{Objetivo}
-  \newcommand{\statusDefault}{Borrador}
-
   \newcommand{\typeLabel}{Tipo}
   \newcommand{\versionLabel}{Versión}
   \newcommand{\statusLabel}{Estado}
   \newcommand{\updatedLabel}{Última actualización}
   \newcommand{\authorLabel}{Autor}
+  \newcommand{\githubLabel}{GitHub}
+  \newcommand{\instagramLabel}{Instagram}
 \else
-  \newcommand{\libraryDefault}{Personal Library}
-  \newcommand{\taglineDefault}{Documentation and Reference Notes}
-  \newcommand{\categoryDefault}{Category}
-  \newcommand{\doctypeDefault}{Note}
-  \newcommand{\titleDefault}{Title}
-  \newcommand{\subtitleDefault}{Objective}
-  \newcommand{\statusDefault}{Draft}
-
   \newcommand{\typeLabel}{Type}
   \newcommand{\versionLabel}{Version}
   \newcommand{\statusLabel}{Status}
   \newcommand{\updatedLabel}{Last updated}
   \newcommand{\authorLabel}{Author}
+  \newcommand{\githubLabel}{GitHub}
+  \newcommand{\instagramLabel}{Instagram}
 \fi
 
-\newcommand{\library}{\libraryDefault}
-\newcommand{\tagline}{\taglineDefault}
 
-\newcommand{\category}{\categoryDefault}
-\newcommand{\doctype}{\doctypeDefault}
-\newcommand{\titlee}{\titleDefault}
-\newcommand{\subtitle}{\subtitleDefault}
+% =============================================================
+% METADATA DEFAULTS (OVERRIDDEN BY src/metadata.tex)
+% =============================================================
 
-\newcommand{\version}{V0}
-\newcommand{\status}{\statusDefault}
-\newcommand{\updated}{2026-01-27}
-\newcommand{\authorr}{Gabriel Gauna}
-\newcommand{\githubh}{\href{https://github.com/gabygauna06}{@gabygauna06}}
-\newcommand{\instagramm}{\href{https://www.instagram.com/gaby.gauna_?igsh=MXVwZDl0NnF6N2djbw\%3D\%3D\&utm_source=qr}{@gaby.gauna\_}}
+\newcommand{\library}{}
+\newcommand{\tagline}{}
+
+\newcommand{\category}{}
+\newcommand{\doctype}{}
+\newcommand{\titlee}{}
+\newcommand{\subtitle}{}
+
+\newcommand{\version}{}
+\newcommand{\status}{}
+\newcommand{\updated}{}
+\newcommand{\authorr}{}
+\newcommand{\githubh}{}
+\newcommand{\instagramm}{}
 
 
 % =============================================================
 % HEADER / FOOTER STYLE
 % =============================================================
 
-\pagestyle{fancy}
-\fancyhf{}
-
 \fancyhead[L]{\fontsize{9.5}{11}\selectfont \library}
 \fancyhead[R]{\fontsize{9.5}{11}\selectfont \category}
 
 \fancyfoot[L]{\fontsize{9.5}{11}\selectfont \version\ \textbullet\ \status}
-\fancyfoot[R]{\fontsize{9.5}{11}\selectfont \thepage\ / \pageref{LastPage}}
+\fancyfoot[R]{\fontsize{9.5}{11}\selectfont \thepage\ /\ \pageref{LastPage}}
 
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -216,24 +221,11 @@
 
 
 % =============================================================
-% LISTINGS STYLE
-% =============================================================
-
-\lstset{
-  basicstyle=\ttfamily\small,
-  columns=fullflexible,
-  frame=single,
-  rulecolor=\color{Rule},
-  breaklines=true,
-  showstringspaces=false
-}
-
-
-% =============================================================
 % COVER PAGE
 % =============================================================
 
 \newcommand{\makecover}{%
+  \hypersetup{pageanchor=false}%
   \begin{titlepage}
     \thispagestyle{empty}
     \color{Ink}
@@ -252,7 +244,6 @@
 
     \vspace{8mm}
     \noindent{\color{Rule}\rule{\textwidth}{0.6pt}}
-    \color{Ink}
 
     \vspace{18mm}
 
@@ -265,7 +256,6 @@
     {\bfseries\fontsize{11}{13}\selectfont \category\par}
     \vspace{2.5mm}
     {\color{Burgundy}\rule{24mm}{1.2pt}}\par
-    \color{Ink}
 
     \vfill
 
@@ -281,17 +271,18 @@
       {\mdseries\fontsize{9.5}{11}\selectfont \updated} \\
       {\bfseries\fontsize{9.5}{11}\selectfont \authorLabel} &
       {\mdseries\fontsize{9.5}{11}\selectfont \authorr} \\
-      {\bfseries\fontsize{9.5}{11}\selectfont GitHub} &
+      {\bfseries\fontsize{9.5}{11}\selectfont \githubLabel} &
       {\mdseries\fontsize{9.5}{11}\selectfont \githubh} \\
-      {\bfseries\fontsize{9.5}{11}\selectfont Instagram} &
+      {\bfseries\fontsize{9.5}{11}\selectfont \instagramLabel} &
       {\mdseries\fontsize{9.5}{11}\selectfont \instagramm} \\
     \end{tabularx}
 
     \vspace{6mm}
     \noindent{\color{Rule}\rule{\textwidth}{0.6pt}}
-    \color{Ink}
 
   \end{titlepage}
+  \hypersetup{pageanchor=true}%
+  \setcounter{page}{1}%
 }
 
 
@@ -301,25 +292,12 @@
 
 \begin{document}
 
-
-% =============================================================
-% TABLE OF CONTENTS
-% =============================================================
-
-\hypersetup{pageanchor=false}
+\input{src/metadata.tex}
 
 \makecover
 
-\hypersetup{pageanchor=true}
-\setcounter{page}{1}
-
 \tableofcontents
 \newpage
-
-
-% =============================================================
-% BODY
-% =============================================================
 
 \ifES
   \input{lang/es/body.tex}
@@ -327,17 +305,7 @@
   \input{lang/en/body.tex}
 \fi
 
-
-% =============================================================
-% REFERENCES
-% =============================================================
-
 \newpage
 \input{src/references.tex}
-
-
-% =============================================================
-% END OF DOCUMENT
-% =============================================================
 
 \end{document}
